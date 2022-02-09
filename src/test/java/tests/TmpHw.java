@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.io.File;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -23,13 +24,13 @@ public class TmpHw {
         $(".main-header").shouldHave(text("Practice Form"));
 
         //<input required="" autocomplete="off" placeholder="First Name" type="text" id="firstName" class=" mr-sm-2 form-control">
-        $(".mr-sm-2.form-control#firstName").setValue("Dima");
+        $(".mr-sm-2.form-control#firstName").setValue("Vovan");
 
         //<input required="" autocomplete="off" placeholder="Last Name" type="text" id="lastName" class=" mr-sm-2 form-control">
         $(".mr-sm-2.form-control#lastName").setValue("deMort");
 
         //<input autocomplete="off" placeholder="name@example.com" type="text" id="userEmail" class="mr-sm-2 form-control">
-        $(".mr-sm-2.form-control#userEmail").setValue("DMort@mailinataror.com");
+        $(".mr-sm-2.form-control#userEmail").setValue("vmort@mailinataror.com");
 
         //<div class="custom-control custom-radio custom-control-inline"><input name="gender" required="" type="radio" id="gender-radio-1" class="custom-control-input" value="Male" data-com.bitwarden.browser.user-edited="yes"><label title="" for="gender-radio-1" class="custom-control-label">Male</label></div>
         $(".custom-control-label[for=gender-radio-1]").click();
@@ -57,27 +58,35 @@ public class TmpHw {
             //<label title="" for="hobbies-checkbox-2" class="custom-control-label">Reading</label>
         $(".custom-control-label[for=hobbies-checkbox-2]").click();
 
-        $(".form-control-file#uploadPicture").uploadFile()
-
-
-
-
-
+        File file = new File("src/test/java/data/cat_4_qaguru_11.jpeg");
+        $(".form-control-file#uploadPicture").uploadFile(file);
 
         //<textarea placeholder="Current Address" rows="5" cols="20" id="currentAddress" class="form-control"></textarea>
         $(".form-control#currentAddress").setValue("Main street,90210");
 
-
-
+        //<div class="col-md-4 col-sm-12"><div class=" css-2b097c-container" id="city"><div class=" css-yk16xz-control"><div class=" css-1hwfws3"><div class=" css-1wa3eu0-placeholder">Select City</div><div class="css-1g6gooi"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-4-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-1wy0on6"><span class=" css-1okebmr-indicatorSeparator"></span><div aria-hidden="true" class=" css-tlfecz-indicatorContainer"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div>
+        //<div class="col-md-4 col-sm-12"><div class=" css-2b097c-container" id="state"><div class=" css-yk16xz-control"><div class=" css-1hwfws3"><div class=" css-1uccc91-singleValue">Uttar Pradesh</div><div class="css-1g6gooi"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-1wy0on6"><span class=" css-1okebmr-indicatorSeparator"></span><div aria-hidden="true" class=" css-tlfecz-indicatorContainer"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div>
         $("#state").click();
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
         $(byText("Merrut")).click();
 
-//<div class="col-md-4 col-sm-12"><div class=" css-2b097c-container" id="city"><div class=" css-yk16xz-control"><div class=" css-1hwfws3"><div class=" css-1wa3eu0-placeholder">Select City</div><div class="css-1g6gooi"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-4-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-1wy0on6"><span class=" css-1okebmr-indicatorSeparator"></span><div aria-hidden="true" class=" css-tlfecz-indicatorContainer"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div>
-//<div class="col-md-4 col-sm-12"><div class=" css-2b097c-container" id="state"><div class=" css-yk16xz-control"><div class=" css-1hwfws3"><div class=" css-1uccc91-singleValue">Uttar Pradesh</div><div class="css-1g6gooi"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 1; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-1wy0on6"><span class=" css-1okebmr-indicatorSeparator"></span><div aria-hidden="true" class=" css-tlfecz-indicatorContainer"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-19bqh2r"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div></div>
 
+        //<button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        $(".btn.btn-primary#submit").click();
+        $(".modal-title.h4#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
+        $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text("Label"),text("Values"),
+                text("Student Name"),text("Vovan deMort"),
+                text("Student Email"),text("vmort@mailinataror.com"),
+                text("Gender"),text("Male"),
+                text("Mobile"),text("1234567890"),
+                text("Date of Birth"),text("21 April,1999"),
+                text("Subjects"),text("History"),
+                text("Hobbies"),text("Reading"),
+                text("Picture"),text("cat_4_qaguru_11.jpeg"),
+                text("Address"),text("Main street,90210"),
+                text("State and City"),text("Uttar Pradesh Merrut"));
 
         sleep(5000);
     }
