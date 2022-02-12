@@ -30,7 +30,10 @@ public class PracticeFormTest {
         $("#firstName").setValue("Vovan");
         $("#lastName").setValue("deMort");
         $("#userEmail").setValue("vmort@mailinataror.com");
+
+        //        $("#genderWrapper").$(byText("Male")).click();
         $("[for=gender-radio-1]").click();
+
         $("#userNumber").setValue("1234567890");
         $(".react-datepicker__input-container").click();
         $(".react-datepicker__month-select").selectOption(3);
@@ -38,11 +41,18 @@ public class PracticeFormTest {
         $(".react-datepicker__day.react-datepicker__day--021").click();
         $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3").scrollIntoView(true);
         $(".subjects-auto-complete__value-container.subjects-auto-complete__value-container--is-multi.css-1hwfws3").click();
+
+        //$("#subjectsInput").setValue("History").pressEnter();
         $("#subjectsInput").setValue("Hi");
         $(byText("History")).click();
+
+        //$("#hobbiesWrapper").$(byText("Sports")).click();
         $("[for=hobbies-checkbox-2]").click();
+
+        //$("#uploadPicture").uploadFromClasspath("src/test/resources/img/cat_4_qaguru_11.jpeg");
         File file = new File("src/test/resources/img/cat_4_qaguru_11.jpeg");
         $("#uploadPicture").uploadFile(file);
+
         $("#currentAddress").setValue("Main street,90210");
         $("#state").click();
         $(byText("Uttar Pradesh")).click();
